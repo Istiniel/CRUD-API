@@ -1,6 +1,6 @@
 import { type User } from '../types'
 
-export const users: User[] = [
+export let users: User[] = [
   {
     id: '294860dd-c6ec-42dd-bac4-3ad0361532e1',
     username: 'John the first',
@@ -21,8 +21,21 @@ export const users: User[] = [
   },
 ]
 
+export function updateUserInfo(user: User): void {
+  const id = user.id
+  users = [...users.filter((user) => user.id !== id), user]
+}
+
 // {
 //   "username": "John the first!!!",
 //   "age": 1123,
 //   "hobbies": ["fishing!!!!!"]
+// }
+
+// put
+// id 294860dd-c6ec-42dd-bac4-3ad0361532e1
+// {
+//   "username": "JOOOOOOHN",
+//   "age": 2354,
+//   "hobbies": ["FIIIISH"]
 // }

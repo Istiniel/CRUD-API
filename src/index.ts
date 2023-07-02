@@ -2,6 +2,7 @@ import http from 'node:http'
 import doteenv from 'dotenv'
 import { handleGet } from './CRUD/handleGet'
 import { handlePost } from './CRUD/handlePost'
+import { handlePut } from './CRUD/handlePut'
 doteenv.config()
 
 const PORT: number = Number(process.env.PORT) | 9000
@@ -14,7 +15,7 @@ const hostname = '127.0.0.1'
 const requestHandler = {
   GET: handleGet,
   POST: handlePost,
-  // PUT: handlePut,
+  PUT: handlePut,
   // DELETE: handleDelete,
 }
 
