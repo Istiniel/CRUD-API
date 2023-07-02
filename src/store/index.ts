@@ -1,5 +1,4 @@
 import { type User } from '../types'
-// import { v4 } from 'uuid'
 
 export const users: User[] = [
   {
@@ -21,3 +20,9 @@ export const users: User[] = [
     hobbies: ['fishing', 'swimming', 'hunting'],
   },
 ]
+
+// {
+//   "username": "John the first!!!",
+//   "age": 1123,
+//   "hobbies": ["fishing!!!!!"]
+// }

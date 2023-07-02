@@ -1,7 +1,7 @@
 import { type IncomingMessage, type ServerResponse } from 'node:http'
 import { users } from '../store'
 
-export function handleGet(req: IncomingMessage, res: ServerResponse): void {
+export async function handleGet(req: IncomingMessage, res: ServerResponse): Promise<string> {
   const url = req.url
   const base = req.url?.split('/').slice(0, -1).join('/')
   const id = req.url?.split('/').at(-1)
@@ -34,4 +34,6 @@ export function handleGet(req: IncomingMessage, res: ServerResponse): void {
     res.write('Error! Non-existing route')
     res.end()
   }
+
+  return 'Request handled'
 }
