@@ -26,6 +26,10 @@ export function updateUserInfo(user: User): void {
   users = [...users.filter((user) => user.id !== id), user]
 }
 
+export function deleteUser(id: string): void {
+  users = users.filter((user) => user.id !== id)
+}
+
 // {
 //   "username": "John the first!!!",
 //   "age": 1123,
