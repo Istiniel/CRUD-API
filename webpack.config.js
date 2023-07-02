@@ -1,5 +1,6 @@
 const path = require('path')
 const ESLintWebpackPlugin = require('eslint-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/index.ts',
@@ -15,7 +16,7 @@ module.exports = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
-  plugins: [new ESLintWebpackPlugin({ extensions: 'ts' })],
+  plugins: [new ESLintWebpackPlugin({ extensions: 'ts' }), new CleanWebpackPlugin()],
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
