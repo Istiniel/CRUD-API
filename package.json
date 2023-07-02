@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "lint": "eslint . --ext .ts",
-    "start:dev": "webpack serve --open --config webpack.dev.js",
+    "start:dev": "ts-node-dev ./src/index.ts",
     "start:prod": "webpack --config webpack.prod.js && node ./dist/index.js"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Istiniel/CRUD-API#readme",
   "devDependencies": {
+    "@types/uuid": "^9.0.2",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "clean-webpack-plugin": "^4.0.0",

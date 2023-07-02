@@ -3,6 +3,7 @@ const ESLintWebpackPlugin = require('eslint-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
+  target: 'node',
   entry: './src/index.ts',
   module: {
     rules: [
@@ -19,6 +20,6 @@ module.exports = {
   plugins: [new ESLintWebpackPlugin({ extensions: 'ts' }), new CleanWebpackPlugin()],
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
   },
 }
