@@ -14,7 +14,7 @@
     "project": ["tsconfig.json"]
   },
 
-  "ignorePatterns": ["webpack.config.js", "webpack.dev.js", "webpack.prod.js"],
+  "ignorePatterns": ["webpack.config.js", "webpack.dev.js", "webpack.prod.js", "jest.config.ts"],
   "rules": {
     "@typescript-eslint/no-unused-vars": ["error"],
     "@typescript-eslint/indent": 0,

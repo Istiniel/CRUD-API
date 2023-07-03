@@ -20,7 +20,7 @@ export async function handlePut(req: IncomingMessage, res: ServerResponse): Prom
         updateUserInfo(updatedUser as User)
 
         res.writeHead(200, { 'Content-Type': 'application/json' })
-        res.end('User updated!')
+        res.end(JSON.stringify(updatedUser))
       } catch (error) {
         console.log('Non correct JSON format request body')
       }

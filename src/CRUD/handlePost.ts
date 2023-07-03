@@ -17,7 +17,7 @@ export async function handlePost(req: IncomingMessage, res: ServerResponse): Pro
       if ('username' in user && 'age' in user && 'hobbies' in user) {
         res.writeHead(201, { 'Content-Type': 'application/json' })
         users.push(user as User)
-        res.write('User added!')
+        res.write(JSON.stringify(user))
         res.end()
       } else {
         res.writeHead(400, { 'Content-Type': 'text/plain' })

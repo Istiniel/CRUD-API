@@ -24,6 +24,8 @@ const server = http.createServer((req, res) => {
     void handler(req, res)
       .catch((err) => {
         console.log(err)
+        res.writeHead(500)
+        res.end('server internal error')
       })
       .then(() => {
         console.log('handle request successfull')

@@ -7,18 +7,18 @@ export let users: User[] = [
     age: 1,
     hobbies: ['fishing'],
   },
-  {
-    id: '2087b628-bdb4-45a8-8d5d-3d84d6334094',
-    username: 'John the second',
-    age: 2,
-    hobbies: ['fishing', 'swimming'],
-  },
-  {
-    id: '653bf735-82b5-4a7b-9250-dd50e65c04be',
-    username: 'John the third',
-    age: 3,
-    hobbies: ['fishing', 'swimming', 'hunting'],
-  },
+  // {
+  //   id: '2087b628-bdb4-45a8-8d5d-3d84d6334094',
+  //   username: 'John the second',
+  //   age: 2,
+  //   hobbies: ['fishing', 'swimming'],
+  // },
+  // {
+  //   id: '653bf735-82b5-4a7b-9250-dd50e65c04be',
+  //   username: 'John the third',
+  //   age: 3,
+  //   hobbies: ['fishing', 'swimming', 'hunting'],
+  // },
 ]
 
 export function updateUserInfo(user: User): void {
