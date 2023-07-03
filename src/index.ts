@@ -1,4 +1,4 @@
-import http from 'node:http'
+import http, { type Server } from 'node:http'
 import doteenv from 'dotenv'
 import { handleGet } from './CRUD/handleGet'
 import { handlePost } from './CRUD/handlePost'
@@ -17,22 +17,28 @@ const requestHandler = {
   DELETE: handleDelete,
 }
 
-const server = http.createServer((req, res) => {
-  const method = req.method
-  if (method != null && method in requestHandler) {
-    const handler = requestHandler[method as keyof typeof requestHandler]
-    void handler(req, res)
-      .catch((err) => {
-        console.log(err)
-        res.writeHead(500)
-        res.end('server internal error')
-      })
-      .then(() => {
-        console.log('handle request successfull')
-      })
-  }
-})
+export async function app(PORT: number): Promise<Server> {
+  const server = http.createServer((req, res) => {
+    const method = req.method
+    if (method != null && method in requestHandler) {
+      const handler = requestHandler[method as keyof typeof requestHandler]
+      void handler(req, res)
+        .catch((err) => {
+          console.log(err)
+          res.writeHead(500)
+          res.end('server internal error')
+        })
+        .then(() => {
+          console.log('handle request successfull')
+        })
+    }
+  })
 
-server.listen(PORT, hostname, () => {
-  console.log(`Server running at http://${hostname}:${PORT}/`)
-})
+  server.listen(PORT, hostname, () => {
+    console.log(`Server running at http://${hostname}:${PORT}/`)
+  })
+
+  return server
+}
+
+void app(PORT)

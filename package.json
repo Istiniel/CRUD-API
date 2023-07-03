@@ -4,10 +4,10 @@
   "description": "Simple crud API app",
   "main": "src/index.ts",
   "scripts": {
-    "test": "jest",
     "lint": "eslint . --ext .ts",
     "start:dev": "ts-node-dev ./src/index.ts",
-    "start:prod": "webpack --config webpack.prod.js && node ./dist/index.js"
+    "start:prod": "webpack --config webpack.prod.js && node ./dist/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
