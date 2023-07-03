@@ -22,7 +22,8 @@ export async function handlePut(req: IncomingMessage, res: ServerResponse): Prom
         res.writeHead(200, { 'Content-Type': 'application/json' })
         res.end(JSON.stringify(updatedUser))
       } catch (error) {
-        console.log('Non correct JSON format request body')
+        res.writeHead(404, { 'Content-Type': 'text/plain' })
+        res.end('Non correct JSON format request body')
       }
     } else {
       res.writeHead(404, { 'Content-Type': 'application/json' })

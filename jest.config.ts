@@ -1,9 +1,8 @@
+/** @type {import('ts-jest').JestConfigWithTsJest} */
 export default {
-  transform: {
-    '^.+\\.ts?$': 'babel-jest',
-  },
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   injectGlobals: true,
   clearMocks: true,
-  testEnvironment: 'node',
   testMatch: ['**/?(*.)+(spec|test).[tj]s?(x)'],
 }
